@@ -1,4 +1,4 @@
-import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+// import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -7,7 +7,7 @@ import { ArrowUpRight, CirclePlay } from "lucide-react";
 const Hero07 = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-      <AnimatedGridPattern
+      {/* <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
         duration={3}
@@ -16,7 +16,7 @@ const Hero07 = () => {
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
           "inset-x-0 h-full skew-y-12"
         )}
-      />
+      /> */}
       <div className="relative z-10 text-center max-w-2xl">
         <Badge className="bg-gradient-to-br via-70% from-primary via-muted/30 to-primary rounded-full py-1 border-none">
           Just released v1.0.0

@@ -15,7 +15,6 @@ export default function ProductView() {
     return (
         <div>
             <p>Product View</p>
-            {/* {JSON.stringify(product)} */}
             <AppProductList product={product} />
         </div>
     );

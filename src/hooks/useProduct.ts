@@ -1,17 +1,25 @@
 import { fetchProductService } from "@/services/productService";
 import { Product } from "@/types/product_response";
+import { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 
 export function useProduct () {
     const [product, setProduct] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
+    const [Error, setError] = useState('');
 
     const fetchData = async () => {
         try {
             const productResponse = await fetchProductService();
             setProduct(productResponse.data);
         } catch (error) {
-            alert(error);
+            if (error instanceof AxiosError) {
+                setError(error.response?.data);
+                console.log(Error);
+            } else {
+                console.log(error);
+            }
+            
         } finally {
             setLoading(false);
         }

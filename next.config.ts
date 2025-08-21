@@ -6,10 +6,10 @@ const nextConfig: NextConfig = {
   experimental: {
     globalNotFound: true,
   },
-  images: {
-    loader: 'custom',
-    loaderFile: './src/utils/loader.ts',
-  },
+  // images: {
+  //   loader: 'custom',
+  //   loaderFile: './src/utils/loader.ts',
+  // },
 };
 
 export default nextConfig;

@@ -24,6 +24,8 @@ export default function AboutPage() {
     //     }
     // )
 
+    const textenv = process.env.NEXT_PUBLIC_APP_NAME;
+
     return (
         <div className="w-full max-w-screen-xl mx-auto px-6 xl:px-0 py-10">
             {/* <WithAppHeaderLoading title="hello world" isShowSubTitle/>
@@ -32,16 +34,37 @@ export default function AboutPage() {
             <br/>
             <p className={`${charmSans.className}`}>This is About.</p> */}
             <br />
+            <p>{textenv}</p>
             <Link href={'/'} className="text-red-500">Home</Link>
             <Image
                 loader={myImageLoader}
-                src="/img-rabbit-macot.png"
+                // src="/img-rabbit-macot.png"
+                src="/book2.png"  
                 width={0}
                 height={0}
                 alt="Picture of the author"
-                style={{ width: 250, height: 400}}
+                style={{ width: 250, height: 'auto'}}
                 priority
             />
+            
+            <Image
+                src="https://rbl-dev.digitalcampaignsite.com/images/home/img-rabbit-macot.png"  
+                width={0}
+                height={0}
+                alt="Picture of the author"
+                style={{ width: 250, height: 'auto'}}
+                priority
+                unoptimized
+            />            
+
+            {/* <Image 
+                src="/rabbitlife-logo.png"  
+                alt="Picture of the author"
+                width={0}
+                height={0}
+                style={{ width: 250, height: 'auto'}}
+                unoptimized
+            /> */}
             {/* <AppLogo /> */}
         </div>
     )

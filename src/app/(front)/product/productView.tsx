@@ -1,21 +1,15 @@
 "use client"
 
-import { fetchProductService } from "@/services/productService";
-import { Product } from "@/types/product_response";
-import { useEffect, useState } from "react";
+import AppLoading from "@/app/components/AppLoading";
+import { useProduct } from "@/hooks/useProduct";
 
 export default function ProductView() {
 
-    const [product, setProduct] = useState<Product[]>([]);
+    const { product, loading } = useProduct();
 
-    const fetchData = async () => {
-        const productResponse = await fetchProductService();
-        setProduct(productResponse.data);
+    if (loading) {
+        return <AppLoading />
     }
-
-    useEffect(() => {
-        fetchData();
-    });
 
     return (
         <div>

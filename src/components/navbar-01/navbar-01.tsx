@@ -32,8 +32,9 @@ const Navbar01Page = () => {
             <Button variant="outline" className="hidden sm:inline-flex">
               Sign In
             </Button>
-            <Button>Get Started</Button>
-
+            <Button asChild>
+              <Link href={"/login"}>Get Started</Link>
+            </Button>
             {/* Mobile Menu */}
             <div className="md:hidden">
               <NavigationSheet />

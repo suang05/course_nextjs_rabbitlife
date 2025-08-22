@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Product } from "@/types/product_response"
 import myImageLoader from "@/utils/loader"
 import Image from "next/image"
-import AppCardButton from "./AppButton"
+import AppCardButton from "./AppCartButtom"
 import Link from "next/link"
 
 type AppProductListPromp = {

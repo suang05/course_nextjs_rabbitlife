@@ -16,9 +16,8 @@ export default async function ProductDetailPage({
     const { id } = await params;
     
     return (
-        <main>
+        <div>
             <ProductDetailView id={Number(id)}></ProductDetailView>
-            {/* {ID} */}
-        </main>
+        </div>
     )
 }

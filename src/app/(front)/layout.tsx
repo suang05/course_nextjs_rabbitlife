@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/sonner"
 import Navbar01Page from "@/components/navbar-01/navbar-01";
 import Footer03Page from "@/components/footer-03/footer-03";
 import AppQueryProvider from "../components/AppQueryProvider";
+import { Suspense } from "react";
+import AppLoading from "../components/AppLoading";
 
 
 // const geistSans = Geist({
@@ -44,13 +46,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > */}
       <body className={`${mitrSans.className} antialiased`}>
+        <Suspense fallback={<AppLoading />} >
+          <AppQueryProvider>
+            <Navbar01Page />
+            {children}
+            <Toaster />
+            <Footer03Page />
+          </AppQueryProvider>        
+        </Suspense>
 
-        <AppQueryProvider>
-          <Navbar01Page />
-          {children}
-          <Toaster />
-          <Footer03Page />
-        </AppQueryProvider>
       </body>
     </html>
   );

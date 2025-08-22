@@ -1,3 +1,5 @@
+// 'use client'
+
 import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
@@ -5,8 +7,13 @@ import { NavigationSheet } from "./navigation-sheet";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 import { ShoppingBasket } from "lucide-react";
+import { useCartStore } from "@/stores/cartStore";
+import CountCartItem from "./countCartItem";
 
 const Navbar01Page = () => {
+
+  
+
   return (
     <div className="bg-muted">
       <nav className="h-16 bg-background border-b">
@@ -19,7 +26,7 @@ const Navbar01Page = () => {
           <div className="flex items-center gap-3">
             <Link href={"/cart"}>
               <Badge className="p-2">
-                <ShoppingBasket/> 10 item (s)
+                <ShoppingBasket/> <CountCartItem/> item (s)
               </Badge>
             </Link>
             <Button variant="outline" className="hidden sm:inline-flex">

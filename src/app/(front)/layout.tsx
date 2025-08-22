@@ -5,6 +5,7 @@ import "../globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import Navbar01Page from "@/components/navbar-01/navbar-01";
 import Footer03Page from "@/components/footer-03/footer-03";
+import AppQueryProvider from "../components/AppQueryProvider";
 
 
 // const geistSans = Geist({
@@ -42,14 +43,14 @@ export default function RootLayout({
       {/* <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > */}
-      <body
-        className={`${mitrSans.className} antialiased`}
-      >
-        <Navbar01Page />
-        <hr></hr>
-        {children}
-        {/* <Toaster /> */}
-        <Footer03Page />
+      <body className={`${mitrSans.className} antialiased`}>
+
+        <AppQueryProvider>
+          <Navbar01Page />
+          {children}
+          <Toaster />
+          <Footer03Page />
+        </AppQueryProvider>
       </body>
     </html>
   );

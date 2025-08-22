@@ -2,20 +2,26 @@
 
 import AppLoading from "@/app/components/AppLoading";
 import AppProductList from "@/app/components/AppProductList";
-import { useProduct } from "@/hooks/useProduct";
+import { useProduct2 } from "@/hooks/useProduct2";
 
 export default function ProductView() {
 
-    const { product, loading } = useProduct();
+    const { product, loading, error } = useProduct2();
 
     if (loading) {
         return <AppLoading />
     }
 
+    if (error) {
+        return <p></p>
+    }
+
     return (
         <div>
             <p>Product View</p>
-            <AppProductList product={product} />
+            {
+                product!.length > 0 && <AppProductList product={product!} />
+            }
         </div>
     );
 }

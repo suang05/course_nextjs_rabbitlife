@@ -4,6 +4,7 @@ import { Product } from "@/types/product_response"
 import myImageLoader from "@/utils/loader"
 import Image from "next/image"
 import AppCardButton from "./AppButton"
+import Link from "next/link"
 
 type AppProductListPromp = {
     product: Product[]
@@ -37,6 +38,9 @@ export default function AppProductList ({ product }: AppProductListPromp) {
                         <CardFooter>
                             <AppCardButton item={item} />
                             {/* <Button variant="outline">ซื้อเลย...</Button> */}
+                            <Button asChild>
+                                <Link href={`/product/${item.id}`}>รายละเอียด</Link>
+                            </Button>
                         </CardFooter>
                     </Card>
                 ))

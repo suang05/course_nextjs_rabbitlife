@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
+import Link from "next/link";
+import { Badge } from "../ui/badge";
+import { ShoppingBasket } from "lucide-react";
 
 const Navbar01Page = () => {
   return (
@@ -14,6 +17,11 @@ const Navbar01Page = () => {
           <NavMenu className="hidden md:block" />
 
           <div className="flex items-center gap-3">
+            <Link href={"/cart"}>
+              <Badge className="p-2">
+                <ShoppingBasket/> 10 item (s)
+              </Badge>
+            </Link>
             <Button variant="outline" className="hidden sm:inline-flex">
               Sign In
             </Button>
